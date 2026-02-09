@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragu | Web Developer & Strategist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- 1. CSS VARIABLES (Theme Settings) --- */
+        :root {
+            --bg-color: #1a1b29;      /* Dark Navy Background */
+            --sidebar-bg: #13141f;    /* Darker Sidebar */
+            --accent-green: #74c74d;  /* Neon Green */
+            --text-white: #ffffff;
+            --text-grey: #a0a0a0;
+            --card-bg: #212231;       /* Slightly lighter for cards */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-white);
+            overflow-x: hidden;
+        }
+
+        /* --- 2. SIDEBAR NAVIGATION --- */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 260px;
+            height: 100vh;
+            background-color: var(--sidebar-bg);
+            display: flex;
+            flex-direction: column;
+            padding: 40px 30px;
+            justify-content: space-between;
+            border-right: 1px solid rgba(255,255,255,0.05);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text-white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span { color: var(--accent-green); }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-grey);
+            font-size: 16px;
+            font-weight: 500;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--accent-green);
+        }
+
+        .nav-menu i { width: 20px; }
+
+        .btn-cv {
+            display: block;
+            text-align: center;
+            border: 1px solid var(--text-grey);
+            color: var(--text-grey);
+            padding: 12px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .btn-cv:hover {
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+            background: rgba(116, 199, 77, 0.05);
+        }
+
+        /* --- 3. MAIN CONTENT AREA --- */
+        .main-content {
+            margin-left: 260px;
+            padding: 0;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 60px 8%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid rgba(255,255,255,0.02);
+        }
+
+        /* Titles */
+        .section-tag {
+            color: var(--accent-green);
+            font-size: 14px;
+            letter-spacing: 2px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: 40px;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        /* --- HOME SECTION --- */
+        #home {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            height: 100vh;
+            overflow: hidden;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .hero-text {
+            max-width: 550px;
+            z-index: 10;
+        }
+
+        .hero-name {
+            font-size: 90px;
+            line-height: 1;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .hero-role {
+            font-size: 22px;
+            color: var(--text-grey);
+            margin-bottom: 30px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-green);
+            color: #fff;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            box-shadow: 0 10px 20px rgba(116, 199, 77, 0.2);
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(116, 199, 77, 0.3);
+        }
+
+        .hero-img-container {
+            position: relative;
+            height: 80%;
+            width: 45%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        /* Green Circle behind image */
+        .hero-circle {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            background: rgba(116, 199, 77, 0.1);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .hero-img {
+            max-width: 100%;
+            max-height: 100%;
+            z-index: 2;
+            border-radius: 20px;
+            filter: grayscale(100%); /* Makes your photo Black & White */
+            transition: 0.5s;
+        }
+
+        .hero-img:hover {
+            filter: grayscale(0%); /* Color on hover */
+        }
+
+        /* --- SERVICES SECTION --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent-green);
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 30px;
+            color: var(--accent-green);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .service-card ul {
+            list-style: none;
+            color: var(--text-grey);
+            line-height: 1.8;
+        }
+
+        .service-card li::before {
+            content: "•";
+            color: var(--accent-green);
+            display: inline-block;
+            width: 1em;
+        }
+
+        /* --- WORKS SECTION --- */
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .work-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .work-img {
+            height: 200px;
+            background: #2a2c3d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-grey);
+        }
+
+        .work-info {
+            padding: 20px;
+        }
+
+        .work-info h3 { margin-bottom: 10px; }
+        .work-info p { color: var(--text-grey); font-size: 14px; margin-bottom: 15px; }
+        .work-link { color: var(--accent-green); text-decoration: none; font-weight: bold; }
+
+        /* --- CONTACT SECTION --- */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--card-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-green);
+            font-size: 20px;
+        }
+
+        .contact-text h4 { font-size: 16px; margin-bottom: 5px; }
+        .contact-text a { color: var(--text-grey); text-decoration: none; transition: 0.3s; }
+        .contact-text a:hover { color: var(--accent-green); }
+
+        /* --- MOBILE RESPONSIVE --- */
+        @media (max-width: 991px) {
+            .sidebar {
+                width: 100%;
+                height: 70px;
+                flex-direction: row;
+                padding: 10px 30px;
+                align-items: center;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                border-right: none;
+            }
+            .nav-menu, .btn-cv { display: none; } /* Hidden on mobile for simplicity */
+            
+            .main-content { margin-left: 0; margin-top: 70px; }
+            
+            #home { flex-direction: column-reverse; height: auto; padding-top: 50px; text-align: center; }
+            .hero-text { margin-top: 30px; }
+            .hero-name { font-size: 50px; }
+            .hero-img-container { width: 100%; height: 300px; }
+            
+            .contact-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <a href="#home" class="logo"><i class="fas fa-terminal"></i> Ragu<span>.</span></a>
+        
+        <ul class="nav-menu">
+            <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="#services"><i class="fas fa-code"></i> Services</a></li>
+            <li><a href="#works"><i class="fas fa-laptop"></i> Works</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+
+        <a href="#contact" class="btn-cv">Hire Me</a>
+    </aside>
+
+    <div class="main-content">
+
+        <section id="home">
+            <div class="hero-text">
+                <span class="section-tag">Hello, I'm</span>
+                <h1 class="hero-name">Ragu</h1>
+                <h2 class="hero-role">Web Developer & <span style="color:var(--accent-green)">Content Strategist</span></h2>
+                <p style="color:var(--text-grey); margin-bottom: 30px;">
+                    I build the engine and provide the fuel. 2+ Years experience in Full-Stack Development and Creative Scriptwriting.
+                </p>
+                <a href="#contact" class="btn-primary">Say Hello <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="hero-img-container">
+                <div class="hero-circle"></div>
+                <img src="ragu.jpeg" alt="Ragu Profile" class="hero-img">
+            </div>
+        </section>
+
+        <section id="about">
+            <span class="section-tag">About Me</span>
+            <h2 class="section-title">I Don't Just Code.<br>I Create <span style="color:var(--accent-green)">Experiences.</span></h2>
+            
+            <div style="max-width: 800px; color: var(--text-grey); font-size: 18px; line-height: 1.8;">
+                <p>
+                    In the digital world, a beautiful website is useless if it doesn't say the right things. 
+                    Most clients hire a developer and then struggle to write content. 
+                    <strong>I solve both problems.</strong>
+                </p>
+                <br>
+                <p>
+                    With <strong>2+ years of experience</strong>, I bridge the gap between technical code and human connection. 
+                    Whether you need a high-performance e-commerce site or a viral script for your next Reel, 
+                    I handle the tech <em>and</em> the text.
+                </p>
+            </div>
+            
+            <div style="margin-top: 40px; display: flex; gap: 40px;">
+                <div>
+                    <h1 style="font-size: 50px; color: var(--accent-green); font-weight:800;">02+</h1>
+                    <span style="color: var(--text-grey);">Years Experience</span>
+                </div>
+                <div>
+                    <h1 style="font-size: 50px; color: var(--accent-green); font-weight:800;">15+</h1>
+                    <span style="color: var(--text-grey);">Projects Done</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <span class="section-tag">What I Do</span>
+            <h2 class="section-title">My Services</h2>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-laptop-code service-icon"></i>
+                    <h3>Web Development</h3>
+                    <ul>
+                        <li>Custom Website Build</li>
+                        <li>Responsive Mobile Design</li>
+                        <li>Landing Page Optimization</li>
+                        <li>Performance Tuning</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-video service-icon"></i>
+                    <h3>Video Scripts</h3>
+                    <ul>
+                        <li>Viral Hooks (Reels/Shorts)</li>
+                        <li>Real Estate Walkthroughs</li>
+                        <li>Explainer Video Scripts</li>
+                        <li>Webinar Flows</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-pen-nib service-icon"></i>
+                    <h3>Content Strategy</h3>
+                    <ul>
+                        <li>Founder Intros & Bios</li>
+                        <li>Vision & Mission Writing</li>
+                        <li>Email Marketing Copy</li>
+                        <li>'About Us' Storytelling</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="works">
+            <span class="section-tag">Portfolio</span>
+            <h2 class="section-title">Recent Works</h2>
+            
+            <div class="works-grid">
+                <div class="work-card">
+                    <div class="work-img"><i class="fas fa-home fa-3x"></i></div>
+                    <div class="work-info">
+                        <h3>Real Estate Website</h3>
+                        <p>Full build + Walkthrough Scripts.</p>
+                        <a href="#" class="work-link">View Project ></a>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="work-img"><i class="fas fa-shopping-cart fa-3x"></i></div>
+                    <div class="work-info">
+                        <h3>E-Commerce Store</h3>
+                        <p>High conversion design & Email copy.</p>
+                        <a href="#" class="work-link">View Project ></a>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="work-img"><i class="fas fa-mobile-alt fa-3x"></i></div>
+                    <div class="work-info">
+                        <h3>Viral Shorts Script</h3>
+                        <p>Scripting for 1M+ view campaign.</p>
+                        <a href="#" class="work-link">Read Script ></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <span class="section-tag">Get in Touch</span>
+            <h2 class="section-title">Let's Work Together</h2>
+
+            <div class="contact-container">
+                <div class="contact-left">
+                    <div class="contact-info-item">
+                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="contact-text">
+                            <h4>Phone / WhatsApp</h4>
+                            <a href="tel:+917708253651">+91 77082 53651</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <a href="mailto:rragu0611@gmail.com">rragu0611@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-icon"><i class="fab fa-instagram"></i></div>
+                        <div class="contact-text">
+                            <h4>Instagram</h4>
+                            <a href="https://www.instagram.com/mr_ragu_kutty_official_15?igsh=a2d2a2k1NHZ6ZXVx" target="_blank">@mr_ragu_kutty_official_15</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-right">
+                    <p style="color:var(--text-grey); margin-bottom:20px;">
+                        Have a project in mind? Feel free to contact me directly via WhatsApp or Email.
+                    </p>
+                    <a href="https://wa.me/917708253651" class="btn-primary" style="width:100%; text-align:center;">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div style="margin-top: 50px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; text-align: center; color: var(--text-grey); font-size: 14px;">
+                © 2026 Ragu. All Rights Reserved.
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
