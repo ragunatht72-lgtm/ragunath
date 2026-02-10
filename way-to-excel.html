@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Way to Excel | Project Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- THEME SETTINGS --- */
+        :root {
+            --bg-color: #1a1b29;
+            --card-bg: #212231;
+            --accent-green: #74c74d;
+            --text-white: #ffffff;
+            --text-grey: #a0a0a0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-white);
+            line-height: 1.6;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .back-btn {
+            color: var(--text-white);
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover { color: var(--accent-green); }
+
+        /* --- HEADER --- */
+        header {
+            padding: 80px 8% 40px;
+            text-align: center;
+        }
+
+        .project-category {
+            color: var(--accent-green);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        h1 { font-size: 48px; margin-top: 10px; margin-bottom: 20px; }
+
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            color: var(--text-grey);
+            font-size: 14px;
+            margin-bottom: 40px;
+        }
+
+        .meta-item i { color: var(--accent-green); margin-right: 8px; }
+
+        /* --- CONTENT CONTAINER --- */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px 80px;
+        }
+
+        .content-section {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        h2 { color: var(--text-white); font-size: 24px; margin-bottom: 20px; border-left: 4px solid var(--accent-green); padding-left: 15px; }
+        p { color: var(--text-grey); margin-bottom: 15px; }
+
+        /* --- LISTS --- */
+        ul.custom-list { list-style: none; }
+        ul.custom-list li {
+            margin-bottom: 12px;
+            color: var(--text-grey);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        ul.custom-list li i { color: var(--accent-green); margin-top: 5px; }
+
+        /* --- GRID --- */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .info-card {
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid transparent;
+            transition: 0.3s;
+        }
+
+        .info-card:hover { border-color: var(--accent-green); }
+        .info-card h3 { font-size: 18px; margin-bottom: 10px; color: var(--text-white); }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 32px; }
+            .project-meta { flex-direction: column; gap: 10px; align-items: center; }
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+        <span style="font-weight:bold; font-size:20px;">Ragu<span style="color:var(--accent-green)">.</span></span>
+    </nav>
+
+    <header>
+        <span class="project-category">Educational Application</span>
+        <h1>Way to Excel in BCA</h1>
+        
+        <div class="project-meta">
+            <span class="meta-item"><i class="fas fa-user"></i> Client: National College</span>
+            <span class="meta-item"><i class="fas fa-code"></i> Role: Full Stack Developer</span>
+            <span class="meta-item"><i class="fas fa-calendar"></i> Year: 2026</span>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="content-section">
+            <h2>Introduction</h2>
+            <p>
+                In the present digital era, technology plays a vital role in the field of education. Students require easy access to academic resources that help them understand their syllabus effectively. For BCA (Bachelor of Computer Applications) students, learning should be both theoretical and practical to build a strong foundation in computer applications.
+            </p>
+            <p>
+                The project <strong>“Way to Excel in BCA”</strong> is developed to support BCA students of National College by providing syllabus-based learning content in a single application. This project helps students access their syllabus-related materials easily without searching multiple sources, thereby improving their learning experience and academic performance.
+            </p>
+        </div>
+
+        <div class="grid-2" style="margin-bottom: 30px;">
+            <div class="content-section">
+                <h2>Project Description</h2>
+                <p>
+                    “Way to Excel in BCA” is an educational application developed based on the BCA syllabus. The application provides structured learning content for each semester and subject. The user-friendly interface allows students to easily navigate through subjects and topics.
+                </p>
+                <p>By using this application, students can:</p>
+                <ul class="custom-list">
+                    <li><i class="fas fa-check-circle"></i> Understand core concepts of BCA subjects.</li>
+                    <li><i class="fas fa-check-circle"></i> Prepare effectively for examinations.</li>
+                    <li><i class="fas fa-check-circle"></i> Improve their overall learning efficiency.</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Scope of Project</h2>
+                <p>The scope is specifically tailored for BCA students of National College. It is designed according to the department syllabus and covers multiple semesters.</p>
+                <ul class="custom-list">
+                    <li><i class="fas fa-dot-circle"></i> Access semester-wise syllabus.</li>
+                    <li><i class="fas fa-dot-circle"></i> View subject-wise study materials.</li>
+                    <li><i class="fas fa-dot-circle"></i> Learn anytime and anywhere digitally.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Objectives</h2>
+            <div class="grid-2">
+                <div class="info-card">
+                    <h3><i class="fas fa-book" style="color:var(--accent-green)"></i> Syllabus Content</h3>
+                    <p>To provide accurate, syllabus-based learning content specifically for BCA students.</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-layer-group" style="color:var(--accent-green)"></i> Organized Learning</h3>
+                    <p>To help students understand BCA subjects in an easy, structured, and organized manner.</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-search-minus" style="color:var(--accent-green)"></i> Reduce Effort</h3>
+                    <p>To reduce the time and effort spent searching for study materials across different sources.</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-laptop-code" style="color:var(--accent-green)"></i> Self-Learning</h3>
+                    <p>To support self-paced learning and improve academic performance and subject knowledge.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Advantages & Future Enhancements</h2>
+            <p><strong>Key Advantages:</strong></p>
+            <ul class="custom-list" style="margin-bottom: 20px;">
+                <li><i class="fas fa-star"></i> Syllabus-oriented content with easy access to study materials.</li>
+                <li><i class="fas fa-star"></i> Saves time/effort with a student-friendly interface.</li>
+                <li><i class="fas fa-star"></i> Enhances academic performance.</li>
+            </ul>
+
+            <p><strong>Future Roadmap:</strong></p>
+            <ul class="custom-list">
+                <li><i class="fas fa-arrow-right"></i> Video tutorials for better understanding.</li>
+                <li><i class="fas fa-arrow-right"></i> Online quizzes, assessments, and previous year question papers.</li>
+                <li><i class="fas fa-arrow-right"></i> Downloadable notes and career guidance materials.</li>
+            </ul>
+        </div>
+
+        <div class="content-section" style="text-align: center;">
+            <h2>Conclusion</h2>
+            <p>
+                The “Way to Excel in BCA” project is a useful educational application designed for BCA students of National College. It provides syllabus-based learning materials in a simple and accessible format. This project helps students improve their subject knowledge, prepare better for examinations, and achieve academic excellence.
+            </p>
+            <br>
+            <a href="index.html#contact" class="back-btn" style="justify-content: center; color: var(--accent-green); border: 1px solid var(--accent-green); padding: 10px; width: 200px; margin: 0 auto; border-radius: 5px;">Contact Developer</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

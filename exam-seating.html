@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Seating System | Project Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- THEME SETTINGS --- */
+        :root {
+            --bg-color: #1a1b29;
+            --card-bg: #212231;
+            --accent-green: #74c74d;
+            --text-white: #ffffff;
+            --text-grey: #a0a0a0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-white);
+            line-height: 1.6;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .back-btn {
+            color: var(--text-white);
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover { color: var(--accent-green); }
+
+        /* --- HEADER --- */
+        header {
+            padding: 80px 8% 40px;
+            text-align: center;
+        }
+
+        .project-category {
+            color: var(--accent-green);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        h1 { font-size: 48px; margin-top: 10px; margin-bottom: 20px; }
+
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            color: var(--text-grey);
+            font-size: 14px;
+            margin-bottom: 40px;
+        }
+
+        .meta-item i { color: var(--accent-green); margin-right: 8px; }
+
+        /* --- CONTENT CONTAINER --- */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px 80px;
+        }
+
+        .content-section {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        h2 { color: var(--text-white); font-size: 24px; margin-bottom: 20px; border-left: 4px solid var(--accent-green); padding-left: 15px; }
+        p { color: var(--text-grey); margin-bottom: 15px; }
+
+        /* --- LISTS --- */
+        ul.custom-list { list-style: none; }
+        ul.custom-list li {
+            margin-bottom: 12px;
+            color: var(--text-grey);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        ul.custom-list li i { color: var(--accent-green); margin-top: 5px; }
+
+        /* --- GRID --- */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .info-card {
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid transparent;
+            transition: 0.3s;
+        }
+
+        .info-card:hover { border-color: var(--accent-green); }
+        .info-card h3 { font-size: 18px; margin-bottom: 10px; color: var(--text-white); }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 32px; }
+            .project-meta { flex-direction: column; gap: 10px; align-items: center; }
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+        <span style="font-weight:bold; font-size:20px;">Ragu<span style="color:var(--accent-green)">.</span></span>
+    </nav>
+
+    <header>
+        <span class="project-category">Web-Based Software</span>
+        <h1>Examination Seating Allotment System</h1>
+        
+        <div class="project-meta">
+            <span class="meta-item"><i class="fas fa-building"></i> Dept: BCA National College</span>
+            <span class="meta-item"><i class="fas fa-code"></i> Role: Full Stack Developer</span>
+            <span class="meta-item"><i class="fas fa-calendar"></i> Year: 2026</span>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="content-section">
+            <h2>Introduction</h2>
+            <p>
+                Examinations are an essential part of the academic system, and proper seating arrangement plays a crucial role in conducting examinations smoothly and fairly. In many colleges, examination seating allotment is still done manually, which consumes a lot of time and may lead to errors, confusion, and inefficiency.
+            </p>
+            <p>
+                The <strong>“Examination Seating Allotment System”</strong> is a web-based software developed for the National College BCA Department to automate the process of examination seating arrangement. This system helps in allocating seats to students systematically based on predefined rules, thereby reducing manual work and ensuring accuracy and transparency during examinations.
+            </p>
+        </div>
+
+        <div class="grid-2" style="margin-bottom: 30px;">
+            <div class="content-section">
+                <h2>Project Description</h2>
+                <p>
+                    The system is developed as a web-based application using modern web technologies. It stores student details, examination schedules, and classroom information in a centralized database.
+                </p>
+                <p>
+                    Based on available data, the system automatically assigns seats to students. It provides an easy-to-use interface for administrators to manage arrangements and avoid conflicts like duplicate seat allocation.
+                </p>
+                <ul class="custom-list">
+                    <li><i class="fas fa-check-circle"></i> Proper utilization of exam halls.</li>
+                    <li><i class="fas fa-check-circle"></i> Error-free seating arrangement.</li>
+                    <li><i class="fas fa-check-circle"></i> Easy modification and reallocation.</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Scope of Project</h2>
+                <p>The scope is currently limited to the BCA Department of National College, designed for use by exam administrators and faculty.</p>
+                <ul class="custom-list">
+                    <li><i class="fas fa-dot-circle"></i> Allocation of seats for BCA students.</li>
+                    <li><i class="fas fa-dot-circle"></i> Management of student & exam data.</li>
+                    <li><i class="fas fa-dot-circle"></i> Quick generation of arrangements.</li>
+                    <li><i class="fas fa-dot-circle"></i> Scalable to other departments in the future.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Objectives & Features</h2>
+            <div class="grid-2">
+                <div class="info-card">
+                    <h3><i class="fas fa-robot" style="color:var(--accent-green)"></i> Automation</h3>
+                    <p>To automate the seating allotment process, reducing manual effort and human errors significantly.</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-clock" style="color:var(--accent-green)"></i> Time Saving</h3>
+                    <p>To save valuable time during examination preparation and provide a systematic arrangement.</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-shield-alt" style="color:var(--accent-green)"></i> Secure Data</h3>
+                    <p>Secure and organized handling of sensitive student and examination data.</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-mouse-pointer" style="color:var(--accent-green)"></i> User Friendly</h3>
+                    <p>An intuitive interface that allows easy management of students, halls, and automatic seat allocation.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Advantages & Future Enhancements</h2>
+            <p><strong>Key Advantages:</strong></p>
+            <ul class="custom-list" style="margin-bottom: 20px;">
+                <li><i class="fas fa-star"></i> Reduces manual work and minimizes errors in seating.</li>
+                <li><i class="fas fa-star"></i> Improves examination management efficiency.</li>
+                <li><i class="fas fa-star"></i> Easy to use and maintain.</li>
+            </ul>
+
+            <p><strong>Future Roadmap:</strong></p>
+            <ul class="custom-list">
+                <li><i class="fas fa-arrow-right"></i> Department-wise and subject-wise seating allocation.</li>
+                <li><i class="fas fa-arrow-right"></i> Student login to view seat details directly.</li>
+                <li><i class="fas fa-arrow-right"></i> Hall ticket generation and PDF report downloads.</li>
+                <li><i class="fas fa-arrow-right"></i> Mobile-friendly interface for students.</li>
+            </ul>
+        </div>
+
+        <div class="content-section" style="text-align: center;">
+            <h2>Conclusion</h2>
+            <p>
+                The Examination Seating Allotment System is an efficient web-based solution for managing examination seating arrangements in the National College BCA Department. This project simplifies the examination process by automating seat allocation, reducing errors, and saving valuable time. Overall, the system ensures the smooth conduct of examinations.
+            </p>
+            <br>
+            <a href="index.html#contact" class="back-btn" style="justify-content: center; color: var(--accent-green); border: 1px solid var(--accent-green); padding: 10px; width: 200px; margin: 0 auto; border-radius: 5px;">Contact Developer</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

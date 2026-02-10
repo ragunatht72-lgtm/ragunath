@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Management System | Project Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- THEME SETTINGS --- */
+        :root {
+            --bg-color: #1a1b29;
+            --card-bg: #212231;
+            --accent-green: #74c74d;
+            --text-white: #ffffff;
+            --text-grey: #a0a0a0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-white);
+            line-height: 1.6;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .back-btn {
+            color: var(--text-white);
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover { color: var(--accent-green); }
+
+        /* --- HEADER --- */
+        header {
+            padding: 80px 8% 40px;
+            text-align: center;
+        }
+
+        .project-category {
+            color: var(--accent-green);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        h1 { font-size: 48px; margin-top: 10px; margin-bottom: 20px; }
+
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            color: var(--text-grey);
+            font-size: 14px;
+            margin-bottom: 40px;
+        }
+
+        .meta-item i { color: var(--accent-green); margin-right: 8px; }
+
+        /* --- CONTENT CONTAINER --- */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px 80px;
+        }
+
+        .content-section {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        h2 { color: var(--text-white); font-size: 24px; margin-bottom: 20px; border-left: 4px solid var(--accent-green); padding-left: 15px; }
+        p { color: var(--text-grey); margin-bottom: 15px; }
+
+        /* --- LISTS --- */
+        ul.custom-list { list-style: none; }
+        ul.custom-list li {
+            margin-bottom: 12px;
+            color: var(--text-grey);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        ul.custom-list li i { color: var(--accent-green); margin-top: 5px; }
+
+        /* --- GRID --- */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .info-card {
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid transparent;
+            transition: 0.3s;
+        }
+
+        .info-card:hover { border-color: var(--accent-green); }
+        .info-card h3 { font-size: 18px; margin-bottom: 10px; color: var(--text-white); }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 32px; }
+            .project-meta { flex-direction: column; gap: 10px; align-items: center; }
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+        <span style="font-weight:bold; font-size:20px;">Ragu<span style="color:var(--accent-green)">.</span></span>
+    </nav>
+
+    <header>
+        <span class="project-category">Web-Based Application</span>
+        <h1>Attendance Management System</h1>
+        
+        <div class="project-meta">
+            <span class="meta-item"><i class="fas fa-university"></i> Client: National College BCA</span>
+            <span class="meta-item"><i class="fas fa-code"></i> Role: Full Stack Developer</span>
+            <span class="meta-item"><i class="fas fa-calendar"></i> Year: 2026</span>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="content-section">
+            <h2>Introduction</h2>
+            <p>
+                Attendance plays an important role in the academic performance and discipline of students. In many educational institutions, attendance is still recorded manually, which is time-consuming and may result in errors, data loss, or manipulation.
+            </p>
+            <p>
+                The <strong>“Attendance Management System”</strong> is a web-based application developed for the National College BCA Department to automate and simplify the process of recording, maintaining, and monitoring student attendance. This system ensures accuracy, efficiency, and transparency in attendance management.
+            </p>
+        </div>
+
+        <div class="grid-2" style="margin-bottom: 30px;">
+            <div class="content-section">
+                <h2>Objectives</h2>
+                <ul class="custom-list">
+                    <li><i class="fas fa-bullseye"></i> To automate the attendance recording process.</li>
+                    <li><i class="fas fa-bullseye"></i> To reduce manual work and paperwork.</li>
+                    <li><i class="fas fa-bullseye"></i> To ensure accurate and secure attendance data.</li>
+                    <li><i class="fas fa-bullseye"></i> To save time for faculty members.</li>
+                    <li><i class="fas fa-bullseye"></i> To provide easy access to attendance reports.</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Scope of Project</h2>
+                <p>The scope is limited to the BCA Department, intended for use by faculty and administrators.</p>
+                <ul class="custom-list">
+                    <li><i class="fas fa-dot-circle"></i> Student attendance marking on a daily basis.</li>
+                    <li><i class="fas fa-dot-circle"></i> Subject-wise and semester-wise tracking.</li>
+                    <li><i class="fas fa-dot-circle"></i> Generation of detailed attendance reports.</li>
+                    <li><i class="fas fa-dot-circle"></i> Scalable to other departments in the future.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Description & Features</h2>
+            <p style="margin-bottom:30px;">
+                The Attendance Management System is developed using standard web technologies. It maintains student details, subject information, and attendance records in a centralized database. Faculty members can mark attendance for each class through the system, and data is automatically stored and updated.
+            </p>
+
+            <div class="grid-2">
+                <div class="info-card">
+                    <h3><i class="fas fa-laptop" style="color:var(--accent-green)"></i> Web-Based Recording</h3>
+                    <p>Accessible from any device to mark attendance instantly.</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-users-cog" style="color:var(--accent-green)"></i> Student Management</h3>
+                    <p>Manage student profiles and subject allocations easily.</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-file-alt" style="color:var(--accent-green)"></i> Report Generation</h3>
+                    <p>Generate daily, weekly, or monthly attendance reports.</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-lock" style="color:var(--accent-green)"></i> Secure Data</h3>
+                    <p>Secure storage prevents manipulation and data loss.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Advantages & Future Enhancements</h2>
+            <p><strong>Key Advantages:</strong></p>
+            <ul class="custom-list" style="margin-bottom: 20px;">
+                <li><i class="fas fa-star"></i> Eliminates manual attendance registers and paperwork.</li>
+                <li><i class="fas fa-star"></i> Reduces errors and data redundancy.</li>
+                <li><i class="fas fa-star"></i> Improves accuracy, transparency, and saves time.</li>
+            </ul>
+
+            <p><strong>Future Roadmap:</strong></p>
+            <ul class="custom-list">
+                <li><i class="fas fa-arrow-right"></i> Student login to view personal attendance status.</li>
+                <li><i class="fas fa-arrow-right"></i> Automated percentage calculation and alerts.</li>
+                <li><i class="fas fa-arrow-right"></i> SMS or Email notifications for low attendance.</li>
+                <li><i class="fas fa-arrow-right"></i> Integration with examination eligibility criteria.</li>
+            </ul>
+        </div>
+
+        <div class="content-section" style="text-align: center;">
+            <h2>Conclusion</h2>
+            <p>
+                The Attendance Management System is an effective solution for managing student attendance in the National College BCA Department. By automating attendance recording and reporting, the system improves efficiency and accuracy while reducing administrative workload. Overall, this project supports better academic monitoring and contributes to a well-organized educational environment.
+            </p>
+            <br>
+            <a href="index.html#contact" class="back-btn" style="justify-content: center; color: var(--accent-green); border: 1px solid var(--accent-green); padding: 10px; width: 200px; margin: 0 auto; border-radius: 5px;">Contact Developer</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
